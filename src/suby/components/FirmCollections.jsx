@@ -48,7 +48,12 @@ const FirmCollections = () => {
    <div className="zoomEffect">
    <div className="firmGroupBox">
                       <div className="firmGroup">
-                        <img src={`${API_URL}/uploads/${item.image}`} alt={item.firmName} />
+                       <img 
+  src={`${API_URL}/uploads/${item.image}`} 
+  alt={item.firmName}
+  onError={(e) => { e.target.src = `${API_URL}/uploads/default.jpg`; }}
+/>
+
                         <div className="firmOffer">{item.offer}</div>
                       </div>
                       <div className="firmDetails">
